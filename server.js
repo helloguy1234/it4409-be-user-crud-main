@@ -4,7 +4,10 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost', 'https://it4409-fe-20235371-user-69ba6.web.app'], // Cho phép FE local và FE production gọi API
+  credentials: true
+}));
 app.use(express.json());
 
 mongoose
